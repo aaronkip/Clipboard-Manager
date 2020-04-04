@@ -1,6 +1,7 @@
 package com.kenova.clipboard.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,22 @@ class ClipAdapter(val context: Context,val clips: List<Clip>): RecyclerView.Adap
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+        var clipData: Clip? = null
+        var currentPosition: Int = 0
+        init {
+
+            itemView.shareItem.setOnClickListener {
+                val intent = Intent()
+                intent.action = Intent.ACTION_SEND
+                intent.putExtra(Intent.EXTRA_TEXT, clipData!!.title )
+
+                context.startActivity(Intent.createChooser(intent, "Share with:"))
+            }
+
+        }
+
+
         fun setData(clip: Clip?, pos: Int){
             itemView.itemTitle.text = clip!!.title
         }
