@@ -43,6 +43,9 @@ class ClipAdapter(val context: Context,val clips: List<Clip>): RecyclerView.Adap
 
         fun setData(clip: Clip?, pos: Int){
             itemView.itemTitle.text = clip!!.title
+
+            this.clipData = clip
+            this.currentPosition = pos
         }
     }
 }

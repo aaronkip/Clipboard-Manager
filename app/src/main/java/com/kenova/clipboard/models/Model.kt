@@ -4,6 +4,10 @@ data class Clip(var title: String, var content: String) {
 
 }
 
-object Supplier {
-    val clips = listOf<Clip>()
+public object Supplier {
+    val clips = listOf<Clip>(
+        Clip("ClipData1",""),
+        Clip("ClipData2",""),
+        Clip("ClipData3","")
+    )
 }
