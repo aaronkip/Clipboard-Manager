@@ -34,6 +34,7 @@ class ClipAdapter(val context: Context,val clips: List<Clip>): RecyclerView.Adap
                 val intent = Intent()
                 intent.action = Intent.ACTION_SEND
                 intent.putExtra(Intent.EXTRA_TEXT, clipData!!.title )
+                intent.type="text/plain"
 
                 context.startActivity(Intent.createChooser(intent, "Share with:"))
             }
