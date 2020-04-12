@@ -40,6 +40,7 @@
         android:orientation="horizontal"
         android:padding="5dp">
         <TextView
+            android:id="@+id/itemContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/clipboard_data"/>

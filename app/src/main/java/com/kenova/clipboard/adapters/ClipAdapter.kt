@@ -1,14 +1,19 @@
 package com.kenova.clipboard.adapters
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
+import android.content.Context.CLIPBOARD_SERVICE
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.RecyclerView
 import com.kenova.clipboard.R
 import com.kenova.clipboard.models.Clip
 import kotlinx.android.synthetic.main.list_item.view.*
+import java.security.AccessController.getContext
 
 class ClipAdapter(val context: Context,val clips: List<Clip>): RecyclerView.Adapter<ClipAdapter.MyViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClipAdapter.MyViewHolder {
@@ -33,18 +38,23 @@ class ClipAdapter(val context: Context,val clips: List<Clip>): RecyclerView.Adap
             itemView.shareItem.setOnClickListener {
                 val intent = Intent()
                 intent.action = Intent.ACTION_SEND
-                intent.putExtra(Intent.EXTRA_TEXT, clipData!!.title )
+                intent.putExtra(Intent.EXTRA_TEXT, clipData!!.content )
                 intent.type="text/plain"
 
                 context.startActivity(Intent.createChooser(intent, "Share with:"))
             }
 
-        }
+            itemView.setOnClickListener {
+                val data = clipData!!.content
+                val clipboard = CLIPBOARD_SERVICE as ClipboardManager
+                //clipboard.setPrimaryClip()
 
+            }
+        }
 
         fun setData(clip: Clip?, pos: Int){
             itemView.itemTitle.text = clip!!.title
-
+            itemView.itemContent.text = clip!!.content
             this.clipData = clip
             this.currentPosition = pos
         }
