@@ -2,6 +2,7 @@ package com.kenova.clipboard
 
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.getSystemService
@@ -25,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         val adapter = ClipAdapter(this, Supplier.clips)
         recyclerView.adapter = adapter
 
-        ClipService()
+        val intent = Intent(this, ClipService::class.java)
+        this.startService(intent)
 
         /*val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         clipboard.addPrimaryClipChangedListener {
