@@ -26,11 +26,13 @@ class MainActivity : AppCompatActivity() {
         val adapter = ClipAdapter(this, Supplier.clips)
         recyclerView.adapter = adapter
 
-        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        ClipService()
+
+        /*val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         clipboard.addPrimaryClipChangedListener {
             val textToPaste: String = clipboard.primaryClip?.getItemAt(0)?.text.toString().trim()
             Supplier.clips.toMutableList().add(Clip(textToPaste,""))
-        }
+        }*/
 
 
     }
