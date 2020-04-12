@@ -8,7 +8,10 @@
     android:layout_marginRight="5dp"
     android:layout_marginLeft="5dp"
     app:cardCornerRadius="5dp">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:layout_weight="1"
             android:textStyle="bold"
             />
@@ -30,5 +33,19 @@
             android:src="@drawable/ic_share_black_24dp"
             />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/clipboard_data"/>
+
+    </LinearLayout>
+
+</LinearLayout>
 
 </androidx.cardview.widget.CardView>
