@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         recyclerView.layoutManager = layoutManager
@@ -33,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             val textToPaste: String = clipboard.primaryClip?.getItemAt(0)?.text.toString().trim()
             Supplier.clips.toMutableList().add(Clip(textToPaste,""))
         }*/
-
 
     }
 }

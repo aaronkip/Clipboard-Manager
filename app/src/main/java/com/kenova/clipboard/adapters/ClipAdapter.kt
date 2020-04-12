@@ -44,12 +44,12 @@ class ClipAdapter(val context: Context,val clips: List<Clip>): RecyclerView.Adap
                 context.startActivity(Intent.createChooser(intent, "Share with:"))
             }
 
-            itemView.setOnClickListener {
-                val data = clipData!!.content
-                val clipboard = CLIPBOARD_SERVICE as ClipboardManager
-                //clipboard.setPrimaryClip()
-
-            }
+//            itemView.setOnClickListener {
+//                val data = clipData!!.content
+//                val clipboard = CLIPBOARD_SERVICE as ClipboardManager
+//                clipboard.setPrimaryClip()
+//
+//            }
         }
 
         fun setData(clip: Clip?, pos: Int){

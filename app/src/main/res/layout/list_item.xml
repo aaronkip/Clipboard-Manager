@@ -19,13 +19,11 @@
         android:padding="5dp">
         <TextView
             android:id="@+id/itemTitle"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
-            android:textSize="17sp"
             android:layout_weight="1"
-            android:textStyle="bold"
-            />
+            android:textAppearance="@style/TitleText"
+            android:layout_width="wrap_content" />
         <ImageView
             android:id="@+id/shareItem"
             android:layout_width="wrap_content"
@@ -43,7 +41,8 @@
             android:id="@+id/itemContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/clipboard_data"/>
+            android:text="@string/clipboard_data"
+            android:textAppearance="@style/ContentText"/>
 
     </LinearLayout>
 
