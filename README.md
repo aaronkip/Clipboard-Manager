@@ -14,3 +14,7 @@ Steps:
 3. Copies a selected ItemView text to clipboard ,index[0], when clicked.
 4. ItemView data can be shared to other apps
 
+## TODO
+
+1. Clipboard Listener
+
