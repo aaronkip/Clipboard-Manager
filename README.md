@@ -17,5 +17,6 @@ Steps:
 ## TODO
 
 1. Clipboard Listener(Listen for clipboard data saved in background) - Service
-2. Custom UI.(Customize UI/UX to popularize the app to users)
-
+2. Custom UI.(Customize UI/UX to popularize the app to users) - Daily usage
+3. Ads - Revenue stream
+4. Notifications with offline activity - Increases interactivity
