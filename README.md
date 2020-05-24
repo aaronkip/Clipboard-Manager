@@ -16,6 +16,6 @@ Steps:
 
 ## TODO
 
-1. Clipboard Listener(Listen for clipboard data saved in background)
+1. Clipboard Listener(Listen for clipboard data saved in background) - Service
 2. 
 
